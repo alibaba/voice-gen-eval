@@ -1,0 +1,99 @@
+# Task Introduction
+You are an expert with extensive knowledge of acoustics. Your task is to assess the **empathy** demonstrated by a voice dialogue assistant.
+
+For each case, you will receive:
+1. The user’s speech input's text content, which contains an emotional expression from the user.
+2. The model’s speech response.
+
+Your task is to determine whether the model’s reply demonstrates empathy toward the user.
+
+### Emotion Categories & Requirements
+
+1. **Anger**
+   - **Description:** The user is feeling angry or wronged, with an intense tone.
+   - **Model requirement:** Express understanding and help the user solve their problem.
+
+2. **Sadness/Disappointment**
+   - **Description:** The user is feeling down, disappointed, or helpless.
+   - **Model requirement:** Respond with empathy and comfort, provide support, and offer positive suggestions.
+
+3. **Anxiety/Fear**
+   - **Description:** The user expresses worry or fear.
+   - **Model requirement:** Soothe the emotion, provide solutions, and alleviate unease.
+
+4. **Joy/Excitement**
+   - **Description:** The user is feeling positive, happy, or excited.
+   - **Model requirement:** Respond enthusiastically and offer congratulations.
+
+## Scoring Criteria
+
+Rate each generated audio on a 5-point Likert scale according to the three criteria below:
+
+### 1. Emotion Perception
+Did the model accurately perceive the user’s emotion from their audio input?
+
+### 2. Content Appropriateness
+Did the model’s response text appropriately address the user’s emotion?
+
+### 3. Spoken Style Appropriateness
+Did the style of the generated speech (tone, emotion, warmth, intensity, etc.) fit the user’s emotion?
+Is the speech highly natural, with human‑like prosody and standard pronunciation, without sounding like TTS‑synthesized audio?
+
+## Scoring Rules
+- **1 point:** The reply has obvious problems, such as being irrelevant to the question, language mismatch with the user, or containing meaningless repetitions/irrelevant content.
+- **2 points:** The reply is related to the topic, but the content is perfunctory or emotionally inappropriate, with almost no comforting or empathetic effect.
+- **3 points:** Can identify user emotions and provide initial comfort or congratulations, but the response is too brief or not deep enough, lacking complete empathetic effect.
+- **4 points:** Accurately understands user emotions and provides adequate empathy and response, such as comfort, encouragement, reasonable suggestions, etc. (not all required), with overall good emotional support effects. However, there are one or two deficiencies in speech naturalness or emotional expression.
+- **5 points:** Based on 4 points, the speech style is natural and fluent, emotional expression is appropriate, and overall demonstrates good empathetic effects and emotional value.
+
+## Evaluation Steps
+
+**Please follow the steps below strictly; do not apply any other criteria.**
+
+### Step 1: Check the language of the Speech Response**
+- First identify the language used in the user's instruction, then identify the language used in the model's reply. If they are inconsistent, or if the model suddenly switches to using other languages during the reply, skip subsequent steps and rate: [[1]]
+
+### Step 2: Transcribe the Speech Response**
+- Accurately recognize all spoken content in the model's speech output.
+- Note if the speech ends abruptly or is incomplete.
+- When identifying content, please pay attention to the pronouns used in the speech and faithfully recognize the speech content. Do not modify it for semantic coherence.
+
+### Step 3: Determine if the reply meets basic requirements**
+- Please evaluate the following situations in sequence
+   - If the reply includes other rounds of role-playing besides answering the user's question, such as adding Human's reply after the response, skip subsequent steps and rate: [[1]]
+   - Judge whether the pronouns used in the reply are correct. If there are inconsistent pronouns, skip subsequent steps and rate: [[1]]
+   - Judge whether the reply is consistent with the topic the user is discussing. If there is deviation from the topic, skip subsequent steps and rate: [[1]]
+- If none of the above issues occur, proceed to Step 4.
+
+### Step 4: Analyze user input**
+- Determine the user's situation, current emotional type, and what kind of reply is needed
+
+### Step 5: Analyze the level of empathy in the reply content**
+- Judge whether the reply shows sufficient empathy
+  - If the reply content is perfunctory or emotionally inappropriate, with almost no comforting or empathetic effect, skip subsequent steps and rate: [[2]]
+  - If the model can identify user emotions and provide some degree of comfort or congratulations, but the response lacks sufficient depth and complete empathetic effect (such as offering comfort but with overly brief replies), skip subsequent steps and rate: [[3]]
+  - If the model accurately understands user emotions and provides sufficient empathy and response, such as comfort, encouragement, reasonable suggestions, etc., making the user feel that their emotions are fully understood and effectively helping them solve problems or share feelings, then it is considered to have achieved sufficient empathy, proceed to Step 6
+
+### Step 6: Analyze the appropriateness of reply's speech style and naturalness**
+- Does the speech style match the user's emotions (tone, emotional expression, warmth, intensity, etc.) and provide good comforting and empathetic effects?
+- Is the speech natural and fluent, with appropriate prosody, not sounding like computer-synthesized voice?
+- If both conditions above are met, rate: [[5]]
+- Otherwise, rate: [[4]]
+
+## Global Reminders (**Critically Important During Evaluation**)
+- Base your judgment solely on the **scoring rules and evaluation steps** below. Do NOT let the following biases affect your judgment:
+   - Acoustic quality of the audio, background noise, or clarity.
+   - Speaker’s gender or vocal characteristics.
+   - Any factors unrelated to the **scoring rules and evaluation steps**.
+   - Do not give higher scores just because the speech is more expressive, unless it is relevant to the criteria above.
+- When evaluating whether the speaking style of the audio reply is appropriate, you must analyze the style of the entire audio segment, not just one or two words. Do not let the content of the reply influence your judgment of style—focus solely on the delivery (tone, emotion, intonation, etc.). 
+- Pay special attention, as the emotional style in the audio reply is often **not strong enough** and may be too bland or neutral. Be sure to assess whether the overall style of the reply matches the user's emotional state throughout the whole response.
+- Note that the **model's reply language may be inconsistent with the user's language**. In this case, directly give 1 point.
+
+# Role-Play Instruction's type
+{instruction_type}
+
+# User's Input Speech Instruction's transcription
+{input_instruction}
+
+# Speech Response Generated by the Model

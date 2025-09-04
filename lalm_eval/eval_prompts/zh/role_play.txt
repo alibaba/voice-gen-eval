@@ -1,0 +1,109 @@
+# Task Introduction
+You are an expert with extensive knowledge of acoustics. Your task is to assess the **role-playing ability** of a speech dialogue model. For each test case, you will receive:
+1. An **input speech role-play instruction** (i.e., a spoken prompt from the user, specifying a scenario or role, and possibly including style or emotional requirements).
+2. The **speech response generated** by the model.
+
+# Evaluation Criteria
+Rate the model's speech response using a 5-point Likert scale based on the following three dimensions:
+
+1. **Content Accuracy**
+  - Does the speech response fit the given **scenario or role**?  
+  - For scenarios: Does it match how a normal person would react in that situation?  
+  - For roles: Does it align with the character’s **background, persona, personality, emotions, and other characteristics**?  
+  - The evaluation of content requirements has only two results: **compliant** or **non-compliant**.
+  - The response must be semantically coherent and logically sound. If the output exhibits incoherence, odd or confusing semantics, or excessive repetition, it should be deemed a failed generation and assigned a score of 1.
+
+2. **Speech Style Adherence**
+  - Does the response match the speaking emotion and style implied or explicitly stated in the role-play instruction?
+  - This includes timbre, speaking style, emotion, intonation, speaking pace, volume, and non-verbal elements.
+  - Only apply the style requirements that can be explicitly derived from the instruction; do not make additional assumptions.
+
+3. **Naturalness**
+  - Is the speech response natural, including that the prosody should sound human and varied, not the flat, monotonous cadence typical of TTS.
+
+## Scoring Rubric
+  - **1**: The speech content does not match the specified scenario or role, regardless of style.
+  - **2**: The speech content meets the requirement, but the speech style is completely inconsistent with the scenario/role.
+  - **3**: The speech content meets the requirement, but the speech style only partially matches the scenario/role.
+  - **4**: The speech content meets the requirement, the speech style generally matches the scenario/role, but the naturalness is lacking, with noticeable synthetic artifacts.
+  - **5**: The speech content meets the requirement, fully matches the specified scenario/role, and the speech is clear, fluent, highly natural, and almost indistinguishable from human speech.
+
+# Evaluation Steps
+Please **strictly follow the steps below for evaluation**, without applying any other criteria.
+
+### Step 1 - Describe the speech in detail
+  — Provide a comprehensive description of the speech, detailing all perceptible vocal characteristics.
+  This should include, but is not limited to:
+    - Timbre (Vocal Quality or Tone Color): Describe whether the voice is warm, bright, raspy, nasal, deep, thin, smooth, etc.
+    - Apparent Gender: Note the perceived gender of the speaker, if identifiable.
+    - Speaking Pace: Indicate whether the delivery is slow, moderate, or fast, and whether it changes throughout the speech.
+    - Pitch Range and Variation: Describe if the pitch is high, low, or mid-range, and whether it is monotone or varied.
+    - Emotional Tone: Identify the dominant emotion (e.g., calm, cheerful, tense, angry, sad, excited) and how strongly it is expressed.
+    - Overall Speaking Style: Specify whether the delivery is conversational, formal, dramatic, persuasive, instructional, etc.
+    - Non-verbal Elements (if present): Note pauses, sighs, laughter, breaths, emphasis patterns, or other vocal cues that influence the expression.
+  - Where relevant, also note non-verbal elements such as pauses, sighs, laughter, or emphasis patterns that contribute to the delivery.
+  - When describing the speech, provide a direct and objective description. Disregard the instruction completely and avoid making any connections to it.
+
+### Step 2 — Transcribe the Speech Response
+  - Accurately recognize all spoken content in the model’s speech output.  
+  - Ignore the input instruction at this stage.  
+  - Note if the speech ends abruptly or is incomplete.
+
+### Step 3 — Analyze the Input Instruction
+  - Identify the language of the instruction based on its content.
+  - Identify:
+    - Role (e.g., pirate, teacher, doctor).
+    - Scenario/Context (e.g., comforting someone, delivering a weather report in character).
+    - Analyze implied style requirements: determine what speaking style is appropriate for the given scenario, and what style the assigned role would naturally exhibit. Style here includes timbre, emotion, speaking pace, accent, speaking manner, non‑verbal cues, and other relevant aspects. List all such implied style requirements.
+    - Any explicit style requirements (tone, emotion, pace, timbre, accent).
+  - If no explicit style requirements are provided, assess style consistency solely based on the role and scenario.
+
+### Step 4 — Check Language Consistency
+  - If the **language** of the response differs from the language of the instruction, assign:  
+    `Final score: [[1]]`  
+    and **stop** evaluation.
+
+### Step 5 — Check Content Accuracy
+  The role‑play content should be consistent with the scenario or role.
+  - If **non-compliant**, assign:  
+    `Final score: [[1]]`  
+    and **stop** evaluation.
+
+### Step 6 — Evaluate Style Adherence
+  - Analyze the **speaking style** of the response.
+    Analyze the characteristics of the response audio. For each style requirement identified in Step 2 — Analyze the Input Instruction, rate how well the response meets it on a 0–100 scale (100 = perfect match, 0 = completely unrelated).
+  - Scoring:
+    - All requirements score 70 or above → Fully meets style requirements → proceed to Step 6.
+    - Some requirements score 70 or above → Partially meets style requirements → Final score: [[3]]
+    - None score 70 or above → Completely fails to meet style requirements → Final score: [[2]]
+  - Note
+    - When analyzing whether the speech style meets the requirements, it is very possible that the response does **not** meet the instruction’s requirements, or only partially meets them with insufficient intensity. Do not let the instruction itself bias you into assuming the speech meets the requirements.
+
+### Step 7 — Evaluate Naturalness
+  - If the speech is **highly natural** → `Final score: [[5]]`
+  - Otherwise → `Final score: [[4]]`
+
+
+# Notes
+  - You must base your comparison of the two systems solely on the given evaluation requirements and steps, and must not let the following biases influence your judgment:
+      - The acoustic quality of the audio, background noise, or clarity.
+      - The speaker's gender and vocal characteristics.
+      - Other factors unrelated to the evaluation requirements and steps.
+      - Unless relevant to the evaluation requirements and steps, exaggerated expressiveness should not result in a higher score.
+  - he language used in the speech response may not match the language of the instruction.
+  - Base your judgment solely on the given evaluation steps and requirements.
+  - If the response contains small interactive extras (such as an introductory remark or a closing statement), it can still be considered content-compliant as long as the role‑play task is fulfilled.
+  - If the response is in a different language from the instruction, assign a score of 1, unless the instruction explicitly specifies that.
+  - In Step 1 — When describing the speech, provide a direct and objective description. Disregard the instruction completely and avoid making any connections to it.
+  - When evaluating content compliance, the response does not have to remain in the character’s first-person perspective at all times; it is sufficient that the substance is reasonable and fulfills the task.
+  - The response must be semantically coherent and logically sound. If the output exhibits incoherence, odd or confusing semantics, or excessive repetition, it should be deemed a failed generation and assigned a score of 1.
+  - Minor interactive add-ons—such as beginning with “Let me give it a try” or ending with “Is there anything else I can help you with?”—do not violate content compliance as long as the core role-play task is completed; the entire response need not stay strictly in character from start to finish.
+  - When evaluating the naturalness of speech, consider whether the pronunciation is standard. If there is a noticeable foreign accent, it should be regarded as lacking in naturalness.
+
+# Role-Play Instruction's type
+{instruction_type}
+
+# User's Input Speech Instruction's transcription
+{input_instruction}
+
+# Speech Response Generated by the Model
