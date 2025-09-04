@@ -12,9 +12,6 @@
   </a>
 </div>
 
-
-Comprehensive evaluation of controllable speech generation capabilities in spoken language models, assessing not just what models say, but how they say it.
-
 ### Overview
 
 **VoiceGenEval** is a bilingual (Chinese & English) benchmark for **controllable speech generation**. It covers four key tasks:
@@ -45,8 +42,6 @@ VoiceGenEval goes beyond checking correctness — it evaluates **how well the mo
 - **Evaluation results of different SLMs across different task types.**
 
   ![](data/images/voicegeneval_combined.png)
-
-
 
 ### Evaluate your model
 
