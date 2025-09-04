@@ -85,4 +85,4 @@ To submit your evaluation results to VoiceGenEval, please send the results file 
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE](https://poe.com/chat/LICENSE) file for details.
+This project is licensed under the MIT License.
