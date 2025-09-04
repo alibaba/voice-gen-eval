@@ -61,7 +61,7 @@ python lalm_eval/gemini_eval.py \
     --gemini_api_key YOUR_API_KEY
 ```
 
-For detailed usage instructions, see: [lalm_eval/README.md](https://poe.com/chat/lalm_eval/README.md)
+For detailed usage instructions, see: [lalm_eval/README.md](https://github.com/alibaba/voice-gen-eval/blob/main/lalm_eval/README.md)
 
 ### Human-Model Correlation Analysis
 
@@ -77,7 +77,7 @@ huggingface-cli download --repo-type dataset --local-dir-use-symlinks False zhan
 python human_align/compute_model_human_spearman_r.py
 ```
 
-For detailed analysis instructions, see: [human_align/README.md](https://poe.com/chat/human_align/README.md)
+For detailed analysis instructions, see: [human_align/README.md](https://github.com/alibaba/voice-gen-eval/blob/main/human_align/README.md)
 
 ### Contributing
 
