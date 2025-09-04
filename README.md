@@ -1,10 +1,17 @@
 # VoiceGenEval: A Benchmark for Controllable Speech Generation in Spoken Language Models
 
 <div align="center">  
-  <a href="https://junzhan2000.github.io/VoiceGenEval.github.io/"><img src="https://img.shields.io/badge/Project-Page-Green" alt="Project Page Badge"> </a>
-  <a href="https://arxiv.org/abs/2501.00000">   <img src="https://img.shields.io/badge/Paper-Arxiv-red" alt="Paper Arxiv Badge"> </a> 
-  <a href="https://huggingface.co/datasets/zhanjun/VoiceGenEval">   <img src="https://img.shields.io/badge/Datasets-HuggingFace-yellow" alt="Datasets"> </a>
+  <a href="https://junzhan2000.github.io/VoiceGenEval.github.io/" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/Project-Page-Green" alt="Project Page Badge">
+  </a>
+  <a href="https://arxiv.org/abs/2501.00000" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/Paper-Arxiv-red" alt="Paper Arxiv Badge">
+  </a> 
+  <a href="https://huggingface.co/datasets/zhanjun/VoiceGenEval" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/Datasets-HuggingFace-yellow" alt="Datasets">
+  </a>
 </div>
+
 
 Comprehensive evaluation of controllable speech generation capabilities in spoken language models, assessing not just what models say, but how they say it.
 
