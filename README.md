@@ -41,7 +41,7 @@ VStyle goes beyond checking correctness — it evaluates **how well the model sp
 
 - **Evaluation results of different SLMs across different task types.**
 
-  ![](data/images/VStyle_combined.png)
+  ![](data/images/rader.png)
 
 ### Evaluate your model
 
