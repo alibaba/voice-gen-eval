@@ -31,7 +31,7 @@ SUB_CATS = {
     ],
     "instruction": [
         "instruction/emotion",
-        "instruction/conversion",
+        "instruction/variation",
         "instruction/style",
     ],
     "role_play": [
@@ -443,34 +443,6 @@ def analyze_scores(scored_jsonl: Path, out_dir: Path):
 
     # ========== Weight table ==========
     BIG_CAT_W = 0.25  # Four major categories each get 0.25
-
-    SUB_CATS = {
-        "acoustic_attributes": [
-            "acoustic_attributes/age",
-            "acoustic_attributes/speed",
-            "acoustic_attributes/gender",
-            "acoustic_attributes/emotion",
-            "acoustic_attributes/pitch",
-            "acoustic_attributes/volume",
-            "acoustic_attributes/composite_properties"
-        ],
-        "instruction": [
-            "instruction/emotion",
-            "instruction/conversion",
-            "instruction/style",
-        ],
-        "role_play": [
-            "role_play/character",
-            "role_play/scenario",
-        ],
-        "empathy": [
-            "empathy/anger",
-            "empathy/sadness_disappointment",
-            "empathy/anxiety_fear",
-            "empathy/joy_excitement",
-        ],
-    }
-
     WEIGHTS = {}
 
     # 1) acoustic_attributes

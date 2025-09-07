@@ -1,20 +1,20 @@
-# VoiceGenEval: A Benchmark for Controllable Speech Generation in Spoken Language Models
+# VStyle: A Benchmark for Voice Style Adaptation with Spoken Instructions
 
 <div align="center">  
-  <a href="https://junzhan2000.github.io/VoiceGenEval.github.io/" style="text-decoration:none;">
+  <a href="https://junzhan2000.github.io/VStyle.github.io/" style="text-decoration:none;">
     <img src="https://img.shields.io/badge/Project-Page-Green" alt="Project Page Badge">
   </a>
   <a href="https://arxiv.org/abs/2501.00000" style="text-decoration:none;">
     <img src="https://img.shields.io/badge/Paper-Arxiv-red" alt="Paper Arxiv Badge">
   </a> 
-  <a href="https://huggingface.co/datasets/zhanjun/VoiceGenEval" style="text-decoration:none;">
+  <a href="https://huggingface.co/datasets/zhanjun/VStyle" style="text-decoration:none;">
     <img src="https://img.shields.io/badge/Datasets-HuggingFace-yellow" alt="Datasets">
   </a>
 </div>
 
 ### Overview
 
-**VoiceGenEval** is a bilingual (Chinese & English) benchmark for **controllable speech generation**. It covers four key tasks:
+**VStyle** is a bilingual (Chinese & English) benchmark for **voice style adaption**. It covers four key tasks:
 
 - Acoustic attribute control
 - Natural language instruction following
@@ -27,7 +27,7 @@ To enable automated and reproducible evaluation, we introduce the **LALM-as-a-Ju
 - **Style adherence** (Does it match the intended style?)
 - **Naturalness** (Does it sound smooth and natural?)
 
-VoiceGenEval goes beyond checking correctness — it evaluates **how well the model speaks**. Experiments on various open-source and commercial systems show its effectiveness in differentiating the controllable speech generation abilities of different models.
+VStyle goes beyond checking correctness — it evaluates **how well the model speaks**. Experiments on various open-source and commercial systems show its effectiveness in differentiating the voice style adaption abilities of different models.
 
 ![](data/images/main-picture.png)
 
@@ -41,7 +41,7 @@ VoiceGenEval goes beyond checking correctness — it evaluates **how well the mo
 
 - **Evaluation results of different SLMs across different task types.**
 
-  ![](data/images/voicegeneval_combined.png)
+  ![](data/images/VStyle_combined.png)
 
 ### Evaluate your model
 
@@ -61,7 +61,7 @@ python lalm_eval/gemini_eval.py \
     --gemini_api_key YOUR_API_KEY
 ```
 
-For detailed usage instructions, see: [lalm_eval/README.md](https://github.com/alibaba/voice-gen-eval/blob/main/lalm_eval/README.md)
+For detailed usage instructions, see: [lalm_eval/README.md](https://github.com/alibaba/vstyle/blob/main/lalm_eval/README.md)
 
 ### Human-Model Correlation Analysis
 
@@ -71,17 +71,17 @@ We reproduce the correlation study between human annotations and LALM-as-a-Judge
 
 ```bash
 # Download evaluation results of all seven models
-huggingface-cli download --repo-type dataset --local-dir-use-symlinks False zhanjun/VoiceGenEval-eval-results --local-dir VoiceGenEval-eval-results
+huggingface-cli download --repo-type dataset --local-dir-use-symlinks False zhanjun/VStyle-eval-results --local-dir VStyle-eval-results
 
 # Compute Spearman correlations
 python human_align/compute_model_human_spearman_r.py
 ```
 
-For detailed analysis instructions, see: [human_align/README.md](https://github.com/alibaba/voice-gen-eval/blob/main/human_align/README.md)
+For detailed analysis instructions, see: [human_align/README.md](https://github.com/alibaba/vstyle/blob/main/human_align/README.md)
 
 ### Contributing
 
-To submit your evaluation results to VoiceGenEval, please send the results file (metadata_with_score.jsonl) to [jzhan24@m.fudan.edu.cn](mailto:jzhan24@m.fudan.edu.cn).
+To submit your evaluation results to VStyle, please send the results file (metadata_with_score.jsonl) to [jzhan24@m.fudan.edu.cn](mailto:jzhan24@m.fudan.edu.cn).
 
 ### License
 

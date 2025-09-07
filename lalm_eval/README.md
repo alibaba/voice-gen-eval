@@ -74,7 +74,7 @@ Each line in the metadata file should be a JSON object containing the following 
     "id": 3801,
     "instruct_id": 381,
     "model_name": "gpt-4o-audio-preview-2025-06-03",
-    "ability": "instruction/conversion",
+    "ability": "instruction/variation",
     "instruct_text": "Please start with a tone of tiredness and weariness, as if you've had a long, difficult day, and then shift to a tone of relief and satisfaction as you say the following sentence: \"It's been a long day--but now, it's over.\"",
     "response_audio_path": "instruction-switch-381-gpt-4o-audio-preview-2025-06-03.mp3"
 }
@@ -84,7 +84,7 @@ Each line in the metadata file should be a JSON object containing the following 
 
 - **`id`**: Unique identifier for the sample
 - **`model_name`**: Name of the model that generated this response
-- **`ability`**: Evaluation category in format `category/subcategory` (e.g., `instruction/conversion`)
+- **`ability`**: Evaluation category in format `category/subcategory` (e.g., `instruction/variation`)
 - **`instruct_text`**: The instruction text given to the model
 - **`response_audio_path`**: Relative path to the generated audio file (from `root_dir`)
 - **`instruct_id`**: Instruction identifier for grouping
