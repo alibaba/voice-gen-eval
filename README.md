@@ -14,7 +14,7 @@
 
 ### Overview
 
-**VStyle** is a bilingual (Chinese & English) benchmark for **voice style adaption**. It covers four key tasks:
+**VStyle** is a bilingual (Chinese & English) benchmark for **voice style adaptation**. It covers four key tasks:
 
 - Acoustic attribute control
 - Natural language instruction following
@@ -27,9 +27,7 @@ To enable automated and reproducible evaluation, we introduce the **LALM-as-a-Ju
 - **Style adherence** (Does it match the intended style?)
 - **Naturalness** (Does it sound smooth and natural?)
 
-VStyle goes beyond checking correctness — it evaluates **how well the model speaks**. Experiments on various open-source and commercial systems show its effectiveness in differentiating the voice style adaption abilities of different models.
-
-![](data/images/main-picture.png)
+VStyle goes beyond checking correctness — it evaluates **how well the model speaks**. Experiments on various open-source and commercial systems show its effectiveness in differentiating the voice style adaptation abilities of different models.
 
 ### Leaderboard
 
@@ -61,7 +59,9 @@ python lalm_eval/gemini_eval.py \
     --gemini_api_key YOUR_API_KEY
 ```
 
-For detailed usage instructions, see: [lalm_eval/README.md](https://github.com/alibaba/vstyle/blob/main/lalm_eval/README.md)
+For detailed usage instructions, see: [lalm_eval/README.md](https://github.com/alibaba/vstyle/blob/main/lalm_eval/README.md).
+
+For inference results of other models reported in our paper, please refer to the dataset at https://huggingface.co/datasets/zhanjun/VStyle-responses.
 
 ### Human-Model Correlation Analysis
 
