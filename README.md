@@ -4,7 +4,7 @@
   <a href="https://junzhan2000.github.io/VStyle.github.io/" style="text-decoration:none;">
     <img src="https://img.shields.io/badge/Project-Page-Green" alt="Project Page Badge">
   </a>
-  <a href="https://arxiv.org/abs/2501.00000" style="text-decoration:none;">
+  <a href="https://arxiv.org/abs/2509.09716" style="text-decoration:none;">
     <img src="https://img.shields.io/badge/Paper-Arxiv-red" alt="Paper Arxiv Badge">
   </a> 
   <a href="https://huggingface.co/datasets/zhanjun/VStyle" style="text-decoration:none;">
@@ -20,6 +20,8 @@
 - Natural language instruction following
 - Role-playing
 - Implicit empathy
+
+![](data/images/examples.png)
 
 To enable automated and reproducible evaluation, we introduce the **LALM-as-a-Judge** framework, which assesses model outputs across three dimensions:
 
